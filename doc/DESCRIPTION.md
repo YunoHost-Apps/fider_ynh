@@ -1,9 +1,9 @@
-Some long and extensive description of what the app is and does, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Fider is a feedback portal that helps teams collect and prioritize customer feedback in one place, based on votes and ideas submitted.
 
 ### Features
 
-- Ut enim ad minim veniam, quis nostrud exercitation ullamco ;
-- Laboris nisi ut aliquip ex ea commodo consequat ;
-- Duis aute irure dolor in reprehenderit in voluptate ;
-- Velit esse cillum dolore eu fugiat nulla pariatur ;
-- Excepteur sint occaecat cupidatat non proident, sunt in culpa."
+- Share ideas, vote and discuss
+- Authentication with support for Github, Facebook, Google, and custom OAuth providers
+- Customizable branding
+- Public API, webhooks etc
+- Markdown support
