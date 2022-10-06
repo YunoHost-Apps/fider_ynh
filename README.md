@@ -26,7 +26,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Shipped version:** 0.21.1~ynh1 *(:warning: This is the `testing` branch. The [`master` branch](https://github.com/YunoHost-Apps/fider_ynh/tree/master) used in the catalog is currently on version 1.0\~ynh1.)*
+**Shipped version:** 0.21.1~ynh1
 
 
 **Demo:** https://feedback.fider.io
