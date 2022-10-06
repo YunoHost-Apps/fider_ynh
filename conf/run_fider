@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+cd "__FINAL_PATH__/app"
+
+# Public Host Name
+export BASE_URL=https://__DOMAIN____PATH__
+export PORT=__PORT__
+
+# Connection string to the PostgreSQL database
+export DATABASE_URL="postgres://__DB_USER__:__DB_PWD__@localhost:5432/__DB_NAME__?sslmode=disable"
+
+# Generate a 512-bit secret
+export JWT_SECRET=__SECRET__
+
+# From which account e-mails will be sent
+export EMAIL_NOREPLY=__APP__@__DOMAIN__
+
+###
+# EMAIL
+###
+
+export EMAIL_SMTP_HOST=127.0.0.1
+export EMAIL_SMTP_PORT=25
+export EMAIL_SMTP_ENABLE_STARTTLS='false'
+
+# This file is provided to the administrator to customize OAuth etc.
+if [[ -f "custom_fider_env" ]]; then
+    source custom_fider_env
+fi
+
+./fider migrate
+./fider "$@"

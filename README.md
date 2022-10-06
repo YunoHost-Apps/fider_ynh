@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Fider for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Working status](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
+[![Integration level](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Working status](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)  
 [![Install Fider with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -26,7 +26,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Shipped version:** 0.21.1~ynh1 *(:warning: This is the `initial` branch. The [`master` branch](https://github.com/YunoHost-Apps/fider_ynh/tree/master) used in the catalog is currently on version 1.0\~ynh1.)*
+**Shipped version:** 0.21.1~ynh1 *(:warning: This is the `testing` branch. The [`master` branch](https://github.com/YunoHost-Apps/fider_ynh/tree/master) used in the catalog is currently on version 1.0\~ynh1.)*
 
 
 **Demo:** https://feedback.fider.io
@@ -37,15 +37,12 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 
 ## Disclaimers / important information
 
-* Any known limitations, constrains or stuff not working, such as (but not limited to):
-    * No Yunohost LDAP connection (yet)
-    * Email required for administation (uses "magic links" instead of admin passwords)
+* Only installable on a domain root (or a subdomain root)!
+* No Yunohost LDAP connection (yet)
+* Email required for administation (uses "magic links" instead of admin passwords)
 
-* Other infos that people should be aware of, such as:
-    * any specific step to perform after installing (such as manually finishing the install, specific admin credentials, ...)
-    * how to configure / administrate the application if it ain't obvious
-    * upgrade process / specificities / things to be aware of ?
-    * security considerations ?
+* You should manually configure the app after installation.
+* You should edit /opt/yunohost/fider/run_fider to add environment variables, e.g for Github integration
 
 ## Documentation and resources
 

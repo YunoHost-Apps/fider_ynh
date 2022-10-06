@@ -3,33 +3,57 @@
 #=================================================
 # COMMON VARIABLES
 #=================================================
-# PHP APP SPECIFIC
-#=================================================
-# Depending on its version, YunoHost uses different default PHP version:
-## YunoHost version "11.X" => PHP 7.4
-## YunoHost version "4.X"  => PHP 7.3
-#
-# This behaviour can be overridden by setting the YNH_PHP_VERSION variable
-#YNH_PHP_VERSION=7.3
-#YNH_PHP_VERSION=7.4
-#YNH_PHP_VERSION=8.0
-# For more information, see the PHP application helper: https://github.com/YunoHost/yunohost/blob/dev/helpers/php#L3-L6
-# Or this app package depending on PHP: https://github.com/YunoHost-Apps/grav_ynh/blob/master/scripts/_common.sh
-# PHP dependencies used by the app (must be on a single line)
-#php_dependencies="php$YNH_PHP_VERSION-deb1 php$YNH_PHP_VERSION-deb2"
-# or, if you do not need a custom YNH_PHP_VERSION:
-php_dependencies="php$YNH_DEFAULT_PHP_VERSION-deb1 php$YNH_DEFAULT_PHP_VERSION-deb2"
+
+nodejs_version=16
 
 # dependencies used by the app (must be on a single line)
-pkg_dependencies="deb1 deb2 $php_dependencies"
+pkg_dependencies="golang-1.18-go postgresql"
 
 #=================================================
 # PERSONAL HELPERS
 #=================================================
 
+build_fider() {
+    ynh_exec_as "$app" mkdir -p "$final_path/go_build"
+    ynh_secure_remove -f "$final_path/app"
+    mkdir -p "$final_path/app"
+
+    pushd "$final_path/sources"
+        # Build server
+        ynh_exec_as "$app" \
+            GOPATH="$final_path/go_build/go" \
+            GOCACHE="$final_path/go_build/.cache" \
+            GOOS=linux GOARCH="$(dpkg --print-architecture)" \
+            PATH=/usr/lib/go-1.18/bin:$PATH \
+            make build-server
+        cp -R migrations views locale LICENSE fider "$final_path/app"
+
+        # Build UI
+        ynh_use_nodejs
+        ynh_exec_as "$app" $ynh_node_load_PATH $ynh_npm ci
+        ynh_exec_as "$app" $ynh_node_load_PATH make build-ssr
+        ynh_exec_as "$app" $ynh_node_load_PATH make build-ui
+        cp -R favicon.png dist robots.txt ssr.js "$final_path/app"
+    popd
+    chown $app:www-data -R "$final_path/app"
+}
+
 #=================================================
 # EXPERIMENTAL HELPERS
 #=================================================
+
+_ynh_enable_backports() {
+    version=$(ynh_get_debian_release)
+    backports_file="/etc/apt/sources.list.d/backports_$version.list"
+    if [[ -f "$backports_file" ]]; then
+        return 0
+    fi
+    {
+        echo "deb http://deb.debian.org/debian $version-backports main contrib non-free"
+        echo "deb-src http://deb.debian.org/debian $version-backports main contrib non-free"
+    } > "$backports_file"
+    apt update
+}
 
 #=================================================
 # FUTURE OFFICIAL HELPERS
