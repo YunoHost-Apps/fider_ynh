@@ -21,6 +21,8 @@ path_url=$(ynh_app_setting_get --app=$app --key=path)
 admin=$(ynh_app_setting_get --app=$app --key=admin)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+db_user=$(ynh_app_setting_get --app=$app --key=db_user)
+db_pwd=$(ynh_app_setting_get --app=$app --key=psqlpwd)
 secret=$(ynh_app_setting_get --app=$app --key=secret)
 port=$(ynh_app_setting_get --app=$app --key=port)
 
@@ -98,7 +100,7 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --time --weight=1
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
