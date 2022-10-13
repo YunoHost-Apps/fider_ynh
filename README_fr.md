@@ -41,7 +41,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 * Email required for administation (uses "magic links" instead of admin passwords)
 
 * You should manually configure the app after installation.
-* You should edit /opt/yunohost/fider/run_fider to add environment variables, e.g for Github integration
+* You should edit /var/www/fider/run_fider to add environment variables, e.g for Github integration
 
 ## Documentations et ressources
 
