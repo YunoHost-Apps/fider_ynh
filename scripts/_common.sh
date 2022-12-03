@@ -7,7 +7,8 @@
 nodejs_version=16
 
 # dependencies used by the app (must be on a single line)
-pkg_dependencies="golang-1.18-go postgresql"
+pkg_dependencies="postgresql"
+pkg_dependency_golang="golang-1.18-go"
 
 #=================================================
 # PERSONAL HELPERS
@@ -42,17 +43,10 @@ build_fider() {
 # EXPERIMENTAL HELPERS
 #=================================================
 
-_ynh_enable_backports() {
-    version=$(ynh_get_debian_release)
-    backports_file="/etc/apt/sources.list.d/backports_$version.list"
-    if [[ -f "$backports_file" ]]; then
-        return 0
-    fi
-    {
-        echo "deb http://deb.debian.org/debian $version-backports main contrib non-free"
-        echo "deb-src http://deb.debian.org/debian $version-backports main contrib non-free"
-    } > "$backports_file"
-    apt update
+install_golang_from_backports() {
+    ynh_exec_warn_less ynh_install_extra_app_dependencies \
+        --repo="deb http://deb.debian.org/debian $version-backports main contrib non-free" \
+        --package="$pkg_dependency_golang"
 }
 
 #=================================================

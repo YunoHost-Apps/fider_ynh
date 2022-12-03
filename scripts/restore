@@ -82,8 +82,8 @@ chmod +x "$final_path/run_fider"
 ynh_script_progression --message="Reinstalling dependencies..." --weight=1
 
 # Define and install dependencies
-_ynh_enable_backports
 ynh_install_app_dependencies $pkg_dependencies
+install_golang_from_backports
 
 #=================================================
 # RESTORE THE NGINX CONFIGURATION
