@@ -45,7 +45,7 @@ build_fider() {
 
 install_golang_from_backports() {
     ynh_exec_warn_less ynh_install_extra_app_dependencies \
-        --repo="deb http://deb.debian.org/debian $version-backports main contrib non-free" \
+        --repo="deb http://deb.debian.org/debian $(ynh_get_debian_release)-backports main contrib non-free" \
         --package="$pkg_dependency_golang"
 }
 
