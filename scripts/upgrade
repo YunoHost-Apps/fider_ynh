@@ -74,7 +74,7 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 
 # Moved fron /opt to /var/www
 if [ -d "/opt/yunohost/$app" ]; then
-	rm -rf "$final_path"
+	ynh_secure_remove -f "$final_path"
 	mv "/opt/yunohost/$app" "$final_path"
 fi
 
