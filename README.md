@@ -26,13 +26,13 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Shipped version:** 0.21.1~ynh1
+**Shipped version:** 0.21.1~ynh2
 
 **Demo:** https://feedback.fider.io
 
 ## Screenshots
 
-![Screenshot of Fider](./doc/screenshots/example.avif)
+![Screenshot of Fider](./doc/screenshots/screenshot.png)
 
 ## Disclaimers / important information
 
