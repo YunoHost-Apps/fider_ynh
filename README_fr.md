@@ -32,7 +32,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 
 ## Captures d'écran
 
-![Capture d'écran de Fider](./doc/screenshots/example.avif)
+![Capture d'écran de Fider](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
