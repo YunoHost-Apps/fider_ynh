@@ -60,6 +60,17 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
+# Moved fron /opt to /var/www
+if [ -d "/opt/yunohost/$app" ]; then
+	# Changing final_path...
+	final_path=/var/www/$app
+	ynh_app_setting_set --app="$app" --key=final_path --value="$final_path"
+
+	# Moving old final_path to new final_path...
+	ynh_secure_remove "$final_path"
+	mv "/opt/yunohost/$app" "$final_path"
+fi
+
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -71,12 +82,6 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-
-# Moved fron /opt to /var/www
-if [ -d "/opt/yunohost/$app" ]; then
-	ynh_secure_remove -f "$final_path"
-	mv "/opt/yunohost/$app" "$final_path"
-fi
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
