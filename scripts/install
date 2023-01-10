@@ -108,7 +108,7 @@ chown -R $app:www-data "$final_path"
 #=================================================
 ynh_script_progression --message="Compiling Fider application..." --weight=1
 
-build_fider
+ynh_exec_warn_less build_fider
 
 #=================================================
 # NGINX CONFIGURATION
