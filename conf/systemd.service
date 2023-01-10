@@ -1,5 +1,5 @@
 [Unit]
-Description=Small description of the service
+Description=Fider: Open feedback platform
 After=network.target
 
 [Service]

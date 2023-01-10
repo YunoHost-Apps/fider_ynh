@@ -3,7 +3,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 ### Features
 
 - Share ideas, vote and discuss
-- Authentication with support for Github, Facebook, Google, and custom OAuth providers
+- Authentication with support for GitHub, Facebook, Google, and custom OAuth providers
 - Customizable branding
 - Public API, webhooks etc
 - Markdown support
