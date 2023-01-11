@@ -25,7 +25,6 @@ ynh_abort_if_errors
 #=================================================
 
 domain=$YNH_APP_ARG_DOMAIN
-# path_url=$YNH_APP_ARG_PATH
 path_url=/
 is_public=$YNH_APP_ARG_IS_PUBLIC
 language=$YNH_APP_ARG_LANGUAGE
@@ -69,7 +68,7 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 ynh_script_progression --message="Installing dependencies..." --weight=1
 
-ynh_install_app_dependencies $pkg_dependencies
+ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
 install_golang_from_backports
 ynh_install_nodejs --nodejs_version=$nodejs_version
 
@@ -100,12 +99,6 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path/sources"
 
-# FIXME: this should be managed by the core in the future
-# Here, as a packager, you may have to tweak the ownerhsip/permissions
-# such that the appropriate users (e.g. maybe www-data) can access
-# files in some cases.
-# But FOR THE LOVE OF GOD, do not allow r/x for "others" on the entire folder -
-# this will be treated as a security issue.
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
@@ -115,7 +108,7 @@ chown -R $app:www-data "$final_path"
 #=================================================
 ynh_script_progression --message="Compiling Fider application..." --weight=1
 
-build_fider
+ynh_exec_warn_less build_fider
 
 #=================================================
 # NGINX CONFIGURATION
