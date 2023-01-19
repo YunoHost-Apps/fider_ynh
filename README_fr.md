@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # Fider pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)  
 [![Installer Fider avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Fider rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Fider rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Fider is a feedback portal that helps teams collect and prioritize customer feedback in one place, based on votes and ideas submitted.
 
@@ -30,9 +30,9 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 
 **Démo :** https://feedback.fider.io
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Fider](./doc/screenshots/screenshot.png)
+![Capture d’écran de Fider](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -45,9 +45,9 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://fider.io>
-* Documentation officielle de l'admin : <https://fider.io/docs>
-* Dépôt de code officiel de l'app : <https://github.com/getfider/fider>
+* Site officiel de l’app : <https://fider.io>
+* Documentation officielle de l’admin : <https://fider.io/docs>
+* Dépôt de code officiel de l’app : <https://github.com/getfider/fider>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_fider>
 * Signaler un bug : <https://github.com/YunoHost-Apps/fider_ynh/issues>
 
@@ -63,4 +63,4 @@ ou
 sudo yunohost app upgrade fider -u https://github.com/YunoHost-Apps/fider_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
