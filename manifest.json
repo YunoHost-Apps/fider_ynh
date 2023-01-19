@@ -6,7 +6,7 @@
         "en": "Open platform to collect and prioritize feedback",
         "fr": "Plateforme ouverte pour récolter et prioriser les retours utilisateurs"
     },
-    "version": "0.21.1~ynh3",
+    "version": "0.21.1~ynh4",
     "url": "https://fider.io",
     "upstream": {
         "license": "AGPL-3.0",
