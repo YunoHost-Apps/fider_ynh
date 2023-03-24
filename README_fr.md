@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # Fider pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
+
 [![Installer Fider avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
 *[Read this readme in english.](./README.md)*
