@@ -1,0 +1,71 @@
+packaging_format = 2
+
+id = "fider"
+name = "Fider"
+description.en = "Open platform to collect and prioritize feedback"
+description.fr = "Plateforme ouverte pour récolter et prioriser les retours utilisateurs"
+
+version = "0.21.1~ynh5"
+
+maintainers = ["Salamandar"]
+
+[upstream]
+license = "AGPL-3.0"
+website = "https://fider.io"
+demo = "https://feedback.fider.io"
+admindoc = "https://fider.io/docs"
+code = "https://github.com/getfider/fider"
+
+[integration]
+yunohost = ">= 11.1.17"
+architectures = "all"
+multi_instance = true
+# ldap = true
+# sso = false
+# disk = "50M"
+# ram.build = "50M"
+# ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    help.en = "Fider should be public for external people to vote."
+    help.fr = "Fider doit être public pour que des personnes externes votent."
+    type = "group"
+    default = "visitors"
+
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "string"
+    choices = ["fr", "en"]
+    default = "fr"
+
+    [install.admin]
+    type = "user"
+
+[resources]
+    [resources.sources]
+        [resources.sources.main]
+        url = "https://github.com/getfider/fider/archive/refs/tags/v0.21.1.tar.gz"
+        sha256 = "b981360d7017849e1efd0ae0970df6239a32ebdca2be35785b1208f1552fe99e"
+
+        autoupdate.strategy = "latest_github_release"
+        autoupdate.asset = "*.tar.gz"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+
+    [resources.apt]
+    packages = "postgresql"
+
+    [resources.database]
+    type = "postgresql"

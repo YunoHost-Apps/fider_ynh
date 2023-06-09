@@ -6,8 +6,6 @@
 
 nodejs_version=16
 
-# dependencies used by the app (must be on a single line)
-pkg_dependencies="postgresql"
 pkg_dependency_golang="golang-1.18-go"
 
 #=================================================
@@ -15,28 +13,28 @@ pkg_dependency_golang="golang-1.18-go"
 #=================================================
 
 build_fider() {
-    ynh_exec_as "$app" mkdir -p "$final_path/go_build"
-    ynh_secure_remove -f "$final_path/app"
-    mkdir -p "$final_path/app"
+    ynh_exec_as "$app" mkdir -p "$install_dir/go_build"
+    ynh_secure_remove -f "$install_dir/app"
+    mkdir -p "$install_dir/app"
 
-    pushd "$final_path/sources"
+    pushd "$install_dir/sources"
         # Build server
         ynh_exec_as "$app" \
-            GOPATH="$final_path/go_build/go" \
-            GOCACHE="$final_path/go_build/.cache" \
+            GOPATH="$install_dir/go_build/go" \
+            GOCACHE="$install_dir/go_build/.cache" \
             GOOS=linux GOARCH="$(dpkg --print-architecture)" \
             PATH=/usr/lib/go-1.18/bin:$PATH \
             make build-server
-        cp -R migrations views locale LICENSE fider "$final_path/app"
+        cp -R migrations views locale LICENSE fider "$install_dir/app"
 
         # Build UI
         ynh_use_nodejs
         ynh_exec_as "$app" $ynh_node_load_PATH $ynh_npm ci
         ynh_exec_as "$app" $ynh_node_load_PATH make build-ssr
         ynh_exec_as "$app" $ynh_node_load_PATH make build-ui
-        cp -R favicon.png dist robots.txt ssr.js "$final_path/app"
+        cp -R favicon.png dist robots.txt ssr.js "$install_dir/app"
     popd
-    chown $app:www-data -R "$final_path/app"
+    chown $app:www-data -R "$install_dir/app"
 }
 
 #=================================================

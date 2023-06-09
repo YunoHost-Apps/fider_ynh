@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "__FINAL_PATH__/app"
+cd "__INSTALL_DIR__/app"
 
 # Public Host Name
 export BASE_URL=https://__DOMAIN____PATH__
