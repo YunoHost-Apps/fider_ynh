@@ -7,6 +7,7 @@
 #=================================================
 
 source _common.sh
+source ynh_install_go
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -14,7 +15,8 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Installing Go Lang..." --weight=1
 
-install_golang_from_backports
+ynh_exec_warn_less ynh_install_go --go_version=$go_version
+ynh_use_go
 
 ynh_script_progression --message="Installing Node JS..." --weight=1
 
