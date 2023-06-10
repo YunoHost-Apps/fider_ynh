@@ -17,14 +17,14 @@ admindoc = "https://fider.io/docs"
 code = "https://github.com/getfider/fider"
 
 [integration]
-yunohost = ">= 11.1.17"
+yunohost = ">= 11.1.20"
 architectures = "all"
 multi_instance = true
 ldap = false
 sso = false
-disk = "?"
-ram.build = "20M"
-ram.runtime = "?"
+disk = "50MB"
+ram.build = "20MB"
+ram.runtime = "50MB"
 
 [install]
     [install.domain]
