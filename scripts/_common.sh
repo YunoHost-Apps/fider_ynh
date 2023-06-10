@@ -46,3 +46,7 @@ install_golang_from_backports() {
         --repo="deb http://deb.debian.org/debian $(ynh_get_debian_release)-backports main contrib non-free" \
         --package="$pkg_dependency_golang"
 }
+
+#=================================================
+# FUTURE OFFICIAL HELPERS
+#=================================================
