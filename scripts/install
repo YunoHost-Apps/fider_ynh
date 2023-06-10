@@ -13,9 +13,11 @@ source /usr/share/yunohost/helpers
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing Go Lang..." --weight=1
+
 install_golang_from_backports
 
 ynh_script_progression --message="Installing Node JS..." --weight=1
+
 ynh_install_nodejs --nodejs_version=$nodejs_version
 
 #=================================================
@@ -51,6 +53,7 @@ ynh_add_nginx_config
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression --message="Adding the configuration file..." --weight=1
+
 secret=$(ynh_string_random --length 64)
 ynh_app_setting_set --app=$app --key=secret --value=$secret
 
