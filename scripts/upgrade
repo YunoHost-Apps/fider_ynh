@@ -41,14 +41,6 @@ if [ -d "/opt/yunohost/$app" ]; then
 fi
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app --home_dir="$install_dir"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -60,17 +52,8 @@ then
 	ynh_setup_source --dest_dir="$install_dir"
 fi
 
-chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
-
-#=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
-install_golang_from_backports
 
 #=================================================
 # NGINX CONFIGURATION
@@ -88,6 +71,7 @@ ynh_add_nginx_config
 ynh_script_progression --message="Updating the configuration file..." --weight=1
 
 ynh_add_config --template="run_fider" --destination="$install_dir/run_fider"
+
 chown $app:www-data "$install_dir/run_fider"
 chmod 744 "$install_dir/run_fider"
 
