@@ -6,7 +6,7 @@
 
 nodejs_version=16
 
-pkg_dependency_golang="golang-1.18-go"
+go_version=1.18
 
 #=================================================
 # PERSONAL HELPERS
@@ -40,12 +40,6 @@ build_fider() {
 #=================================================
 # EXPERIMENTAL HELPERS
 #=================================================
-
-install_golang_from_backports() {
-    ynh_exec_warn_less ynh_install_extra_app_dependencies \
-        --repo="deb http://deb.debian.org/debian $(ynh_get_debian_release)-backports main contrib non-free" \
-        --package="$pkg_dependency_golang"
-}
 
 #=================================================
 # FUTURE OFFICIAL HELPERS
