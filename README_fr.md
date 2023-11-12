@@ -40,7 +40,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 * Site officiel de l’app : <https://fider.io>
 * Documentation officielle de l’admin : <https://fider.io/docs>
 * Dépôt de code officiel de l’app : <https://github.com/getfider/fider>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_fider>
+* YunoHost Store: <https://apps.yunohost.org/app/fider>
 * Signaler un bug : <https://github.com/YunoHost-Apps/fider_ynh/issues>
 
 ## Informations pour les développeurs

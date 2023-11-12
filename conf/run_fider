@@ -19,9 +19,11 @@ export EMAIL_NOREPLY=__APP__@__DOMAIN__
 # EMAIL
 ###
 
-export EMAIL_SMTP_HOST=127.0.0.1
+export EMAIL_SMTP_HOST=localhost
 export EMAIL_SMTP_PORT=25
 export EMAIL_SMTP_ENABLE_STARTTLS='false'
+export EMAIL_SMTP_USERNAME=__APP__
+export EMAIL_SMTP_PASSWORD=__MAIL_PWD__
 
 # This file is provided to the administrator to customize OAuth etc.
 if [[ -f "custom_fider_env" ]]; then
