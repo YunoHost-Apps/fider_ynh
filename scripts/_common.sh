@@ -35,6 +35,7 @@ build_fider() {
         cp -R favicon.png dist robots.txt ssr.js "$install_dir/app"
     popd || ynh_die
     chown "$app:www-data" -R "$install_dir/app"
+    ynh_remove_go
 }
 
 #=================================================
