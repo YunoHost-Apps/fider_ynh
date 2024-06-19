@@ -66,10 +66,10 @@ yunohost service add $app --description="Fider Feedback platform" --log="/var/lo
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-ynh_add_config --template="run_fider" --destination="$install_dir/run_fider"
+ynh_add_config --template=".env" --destination="$install_dir/.env"
 
-chown $app:www-data "$install_dir/run_fider"
-chmod 744 "$install_dir/run_fider"
+chown $app:www-data "$install_dir/.env"
+chmod 744 "$install_dir/.env"
 
 #=================================================
 # START SYSTEMD SERVICE

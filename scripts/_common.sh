@@ -6,7 +6,7 @@
 
 nodejs_version=18
 
-go_version=1.18
+go_version=1.20
 
 #=================================================
 # PERSONAL HELPERS
