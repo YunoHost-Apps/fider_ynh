@@ -17,7 +17,7 @@ admindoc = "https://fider.io/docs"
 code = "https://github.com/getfider/fider"
 
 [integration]
-yunohost = ">= 11.2.12"
+yunohost = ">= 11.2.14"
 architectures = "all"
 multi_instance = true
 
