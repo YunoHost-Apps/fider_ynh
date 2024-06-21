@@ -31,15 +31,32 @@ if [ -d "/opt/yunohost/$app" ]; then
 fi
 
 #=================================================
+# UPDATE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Updating dependencies..." --weight=1
+
+ynh_exec_warn_less ynh_install_go --go_version=$go_version
+ynh_use_go
+
+ynh_install_nodejs --nodejs_version=$nodejs_version
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Upgrading source files..." --weight=1
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="run_fider"
+ynh_setup_source --dest_dir="$install_dir/sources" --full_replace=1
 
 chmod -R o-rwx "$install_dir"
 chown -R "$app:www-data" "$install_dir"
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Compiling Fider application..." --weight=1
+
+ynh_exec_warn_less build_fider
 
 #=================================================
 # UPDATE A CONFIG FILE
@@ -47,7 +64,6 @@ chown -R "$app:www-data" "$install_dir"
 ynh_script_progression --message="Updating $app's configuration file..." --weight=1
 
 ynh_add_config --template="run_fider" --destination="$install_dir/run_fider"
-
 chown "$app:www-data" "$install_dir/run_fider"
 chmod 744 "$install_dir/run_fider"
 

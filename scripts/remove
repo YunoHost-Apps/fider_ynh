@@ -29,6 +29,13 @@ ynh_remove_nginx_config
 ynh_remove_nodejs
 
 #=================================================
+# REMOVE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Removing dependencies..." --weight=1
+
+ynh_remove_nodejs
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
