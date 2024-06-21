@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "fider"
@@ -17,7 +19,7 @@ admindoc = "https://fider.io/docs"
 code = "https://github.com/getfider/fider"
 
 [integration]
-yunohost = ">= 11.2.12"
+yunohost = ">= 11.2.14"
 architectures = "all"
 multi_instance = true
 
@@ -51,10 +53,11 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources]
-        [resources.sources.main]
-        url = "https://github.com/getfider/fider/archive/refs/tags/v0.21.1.tar.gz"
-        sha256 = "b981360d7017849e1efd0ae0970df6239a32ebdca2be35785b1208f1552fe99e"
-        autoupdate.strategy = "latest_github_release"
+    [resources.sources.main]
+    url = "https://github.com/getfider/fider/archive/refs/tags/v0.21.1.tar.gz"
+    sha256 = "b981360d7017849e1efd0ae0970df6239a32ebdca2be35785b1208f1552fe99e"
+
+    autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
     allow_email = true
@@ -67,7 +70,10 @@ ram.runtime = "50M"
     [resources.ports]
 
     [resources.apt]
-    packages = "postgresql"
+    packages = [
+        "g++",
+        "postgresql"
+    ]
 
     [resources.database]
     type = "postgresql"
