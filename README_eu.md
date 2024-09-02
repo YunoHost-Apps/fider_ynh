@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Fider YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/fider.svg)](https://dash.yunohost.org/appci/app/fider) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/fider.svg)](https://ci-apps.yunohost.org/ci/apps/fider/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
 
 [![Instalatu Fider YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
@@ -27,7 +27,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Paketatutako bertsioa:** 0.21.1~ynh5
+**Paketatutako bertsioa:** 0.22.0~ynh1
 
 **Demoa:** <https://feedback.fider.io>
 
