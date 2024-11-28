@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Fider YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/fider.svg)](https://ci-apps.yunohost.org/ci/apps/fider/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/fider)](https://ci-apps.yunohost.org/ci/apps/fider/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/fider)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/fider)
 
 [![Instalatu Fider YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
