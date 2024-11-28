@@ -71,7 +71,7 @@ ynh_use_logrotate
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log" --line_match="[WEB] http server started on"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log" --line_match="http server started on"
 
 #=================================================
 # END OF SCRIPT
