@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Fider
 
-[![集成程度](https://dash.yunohost.org/integration/fider.svg)](https://ci-apps.yunohost.org/ci/apps/fider/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/fider.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/fider.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/fider)](https://ci-apps.yunohost.org/ci/apps/fider/)
+![工作状态](https://apps.yunohost.org/badge/state/fider)
+![维护状态](https://apps.yunohost.org/badge/maintained/fider)
 
 [![使用 YunoHost 安装 Fider](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=fider)
 
@@ -27,7 +29,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**分发版本：** 0.22.0~ynh1
+**分发版本：** 0.23.0~ynh1
 
 **演示：** <https://feedback.fider.io>
 
