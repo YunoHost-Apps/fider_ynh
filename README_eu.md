@@ -29,7 +29,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Paketatutako bertsioa:** 0.24.0~ynh1
+**Paketatutako bertsioa:** 0.25.0~ynh1
 
 **Demoa:** <https://feedback.fider.io>
 
@@ -49,7 +49,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/fider_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/fider_ynh/tree/testing --debug

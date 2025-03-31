@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Fider para Yunohost
+# Fider para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/fider)](https://ci-apps.yunohost.org/ci/apps/fider/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/fider)
@@ -29,7 +29,7 @@ Fider is a feedback portal that helps teams collect and prioritize customer feed
 - Markdown support
 
 
-**Versión actual:** 0.24.0~ynh1
+**Versión actual:** 0.25.0~ynh1
 
 **Demo:** <https://feedback.fider.io>
 
