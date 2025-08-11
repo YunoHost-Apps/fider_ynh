@@ -4,8 +4,8 @@
 # COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
-nodejs_version=18
-go_version=1.22.0
+nodejs_version="22"
+go_version="1.22.0"
 
 build_fider() {
     ynh_exec_as_app mkdir -p "$install_dir/go_build"
@@ -24,9 +24,9 @@ build_fider() {
 
         # Build UI
 
-        ynh_exec_as_app node_load_PATH npm ci
-        ynh_exec_as_app node_load_PATH make build-ssr
-        ynh_exec_as_app node_load_PATH make build-ui
+        ynh_exec_as_app npm ci
+        ynh_exec_as_app make build-ssr
+        ynh_exec_as_app make build-ui
         cp -R favicon.png dist robots.txt ssr.js "$install_dir/app"
     popd || ynh_die
     chown "$app:www-data" -R "$install_dir/app"

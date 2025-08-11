@@ -15,8 +15,6 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 chmod 744 "$install_dir/run_fider"
 
 #=================================================
@@ -35,6 +33,7 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
+
 yunohost service add "$app" --description="Fider Feedback platform" --log="/var/log/$app/$app.log"
 
 ynh_restore "/etc/logrotate.d/$app"
@@ -50,7 +49,7 @@ ynh_restore "/var/log/$app/"
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start"  --wait_until="http server started on"
+ynh_systemctl --service="$app" --action="start" --wait_until="http server started on"
 
 ynh_systemctl --service="nginx" --action="reload"
 
