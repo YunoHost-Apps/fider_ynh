@@ -19,9 +19,9 @@ ynh_app_setting_set --key="secret" --value="$secret"
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-ynh_go_install
+#REMOVEME? ynh_go_install
 
-ynh_nodejs_install
+#REMOVEME? ynh_nodejs_install
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
