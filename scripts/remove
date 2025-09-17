@@ -26,14 +26,14 @@ ynh_config_remove_logrotate
 # Remove the dedicated NGINX config
 ynh_config_remove_nginx
 
-ynh_nodejs_remove
+#REMOVEME? ynh_nodejs_remove
 
 #=================================================
 # REMOVE DEPENDENCIES
 #=================================================
 ynh_script_progression "Removing dependencies..."
 
-ynh_nodejs_remove
+#REMOVEME? ynh_nodejs_remove
 
 #=================================================
 # END OF SCRIPT

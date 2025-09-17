@@ -4,8 +4,8 @@
 # COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
-nodejs_version="22"
-go_version="1.22.0"
+#REMOVEME? nodejs_version="22"
+#REMOVEME? go_version="1.22.0"
 
 build_fider() {
     ynh_exec_as_app mkdir -p "$install_dir/go_build"
@@ -30,5 +30,5 @@ build_fider() {
         cp -R favicon.png dist robots.txt ssr.js "$install_dir/app"
     popd || ynh_die
     chown "$app:www-data" -R "$install_dir/app"
-    ynh_go_remove
+    #REMOVEME? ynh_go_remove
 }

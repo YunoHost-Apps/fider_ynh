@@ -35,9 +35,9 @@ fi
 #=================================================
 ynh_script_progression "Updating dependencies..."
 
-ynh_go_install
+#REMOVEME? ynh_go_install
 
-ynh_nodejs_install
+#REMOVEME? ynh_nodejs_install
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
