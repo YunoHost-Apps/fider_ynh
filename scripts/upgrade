@@ -31,15 +31,6 @@ if [ -d "/opt/yunohost/$app" ]; then
 fi
 
 #=================================================
-# UPDATE DEPENDENCIES
-#=================================================
-ynh_script_progression "Updating dependencies..."
-
-#REMOVEME? ynh_go_install
-
-#REMOVEME? ynh_nodejs_install
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."

@@ -15,15 +15,6 @@ secret=$(ynh_string_random --length 64)
 ynh_app_setting_set --key="secret" --value="$secret"
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Installing dependencies..."
-
-#REMOVEME? ynh_go_install
-
-#REMOVEME? ynh_nodejs_install
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
