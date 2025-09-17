@@ -7,7 +7,7 @@ name = "Fider"
 description.en = "Open platform to collect and prioritize feedback"
 description.fr = "Plateforme ouverte pour récolter et prioriser les retours utilisateurs"
 
-version = "0.28.1~ynh1"
+version = "0.29.0~ynh1"
 
 maintainers = ["Salamandar"]
 
@@ -19,7 +19,7 @@ admindoc = "https://fider.io/docs"
 code = "https://github.com/getfider/fider"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -54,8 +54,8 @@ ram.runtime = "50M"
 [resources]
     [resources.sources]
     [resources.sources.main]
-    url = "https://github.com/getfider/fider/archive/refs/tags/v0.28.1.tar.gz"
-    sha256 = "840b06949e78151ead034750a76eaf697bfa4f2c4b21bf161297b021e0b57bd6"
+    url = "https://github.com/getfider/fider/archive/refs/tags/v0.29.0.tar.gz"
+    sha256 = "c7454afe82e07a867b89c7b937334e0a102ec62596e0325be614c6d8e268e8ae"
 
     autoupdate.strategy = "latest_github_release"
 
@@ -77,3 +77,9 @@ ram.runtime = "50M"
 
     [resources.database]
     type = "postgresql"
+
+    [resources.nodejs]
+    version = "22"
+
+    [resources.go]
+    version = "1.22.0"
