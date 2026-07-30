@@ -17,7 +17,7 @@ build_fider() {
             GOOS=linux GOARCH="$(dpkg --print-architecture)" \
             "PATH=/usr/lib/go-1.18/bin:$PATH" \
             make build-server
-        cp -R migrations views locale LICENSE fider "$install_dir/app"
+        cp -R migrations views locale LICENSE fider static "$install_dir/app"
 
         # Build UI
 
