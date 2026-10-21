@@ -1,6 +1,6 @@
 [Unit]
 Description=Fider: Open feedback platform
-After=network.target
+After=network.target postgresql.service
 
 [Service]
 Type=simple
@@ -10,6 +10,8 @@ WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/run_fider
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
+Restart=on-failure
+RestartSec=10
 
 # Sandboxing options to harden security
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
