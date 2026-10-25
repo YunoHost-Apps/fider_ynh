@@ -7,7 +7,7 @@ name = "Fider"
 description.en = "Open platform to collect and prioritize feedback"
 description.fr = "Plateforme ouverte pour récolter et prioriser les retours utilisateurs"
 
-version = "0.38.2~ynh1"
+version = "0.38.2~ynh2"
 
 maintainers = ["Salamandar"]
 
