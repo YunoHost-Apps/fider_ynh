@@ -7,7 +7,7 @@ name = "Fider"
 description.en = "Open platform to collect and prioritize feedback"
 description.fr = "Plateforme ouverte pour récolter et prioriser les retours utilisateurs"
 
-version = "0.39.0~ynh1"
+version = "0.41.0~ynh1"
 
 maintainers = ["Salamandar"]
 
@@ -54,8 +54,8 @@ ram.runtime = "50M"
 [resources]
     [resources.sources]
     [resources.sources.main]
-    url = "https://github.com/getfider/fider/archive/refs/tags/v0.39.0.tar.gz"
-    sha256 = "6dfb2662742cc8b3994942bcf4bf0c7614674cfb8e7461e086ed114bce1f771f"
+    url = "https://github.com/getfider/fider/archive/refs/tags/v0.41.0.tar.gz"
+    sha256 = "78da2e0219f61b0a50fb0beca78cb959d970dcb1d3a9fa07967fdf8dc21307bf"
 
     autoupdate.strategy = "latest_github_release"
 
